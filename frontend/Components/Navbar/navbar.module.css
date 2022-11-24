@@ -1,0 +1,57 @@
+.nav {
+    display: flex;
+    align-items: center;
+    /* border: 2px solid red; */
+    padding: 0 1em;
+    justify-content: space-between;
+    flex: 1;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.header h1 {
+    margin: 0;
+    /* border: 1px solid black; */
+    color: #0d4c92;
+    font-size: 2.1em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    width: 7.5em;
+}
+
+.menu {
+    margin: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 0.6em;
+}
+
+.menu li {
+    cursor: pointer;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.02em;
+    font-weight: 500;
+    height: 4em;
+    border-bottom: 3px solid transparent;
+    width: 7em;
+    /* border: 2px solid blue; */
+}
+
+.menu li:hover {
+    border-bottom-color: #0d4c92;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    justify-content: flex-end;
+    font-weight: 600;
+    gap: 0.4em;
+    /* border: 1px solid salmon; */
+    width: 14em;
+}
