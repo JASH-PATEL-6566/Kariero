@@ -22,7 +22,7 @@ export default function Navbar() {
                 <ul className={classes.menu}>
                     {menuItem.map(item => {
                         return (
-                            <li>
+                            <li key={item}>
                                 {item}
                                 <KeyboardArrowDownIcon />
                             </li>

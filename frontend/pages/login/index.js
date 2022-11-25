@@ -8,6 +8,9 @@ import G_img from '../../Image/G.png';
 export default function Login() {
     return (
         <>
+            <Head>
+                <title>LogIn | Kariero</title>
+            </Head>
             <div className={classes.login_container}>
                 <Paper className={classes.mid} elevation={3}>
                     <h1>Kariero</h1>
