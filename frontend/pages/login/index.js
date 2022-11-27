@@ -11,7 +11,7 @@ import { useRouter } from 'next/router';
 
 export default function Login() {
     const router = useRouter();
-    const { login } = useAuth();
+    const { login, googleSignIn, currentUser } = useAuth();
     const [data, setData] = useState({
         email: '',
         pass: ''
@@ -52,6 +52,16 @@ export default function Login() {
             })
     }
 
+    const handleGoogleSignIn = async () => {
+        try {
+            await googleSignIn();
+            console.log(currentUser);
+            router.push('/');
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <>
             <Head>
@@ -84,7 +94,7 @@ export default function Login() {
                     <Link href="/forgot-password" className={classes.link}>Forgot Password?</Link>
                     <p>Don't have an account? <Link className={classes.link} href="/signup">Sign Up</Link></p>
                     <Divider variant='middle' />
-                    <Paper className={classes.other_opption} variant="outlined" >
+                    <Paper className={classes.other_opption} variant="outlined" onClick={handleGoogleSignIn}>
                         <Image
                             src={G_img}
                             height={30}
