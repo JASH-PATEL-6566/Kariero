@@ -32,7 +32,7 @@ export default function SignUp() {
         setError({ emailErr: '', passErr: '' });
         setLoading(true);
 
-        signup(email, pass)
+        signup(data.email, data.pass)
             .then(() => {
                 router.push('/login');
             })
@@ -68,7 +68,7 @@ export default function SignUp() {
             <div className={classes.login_container}>
                 <Paper className={classes.mid} elevation={3} >
                     <h1>Kariero</h1>
-                    <form onSubmit={signUp}>
+                    <form>
                         <TextField
                             required
                             id='username'
@@ -84,7 +84,7 @@ export default function SignUp() {
                             error={error.emailErr !== '' ? true : false}
                             className={classes.input}
                             label="Your Email Address"
-                            helperText={error.passErr === "" ? "" : error.emailErr}
+                            helperText={error.emailErr === "" ? "" : error.emailErr}
                             type="email"
                             onChange={(e) => changeData(e.target.id, e.target.value)}
                         />
@@ -99,7 +99,7 @@ export default function SignUp() {
                             onChange={(e) => changeData(e.target.id, e.target.value)}
                             type="password">
                         </TextField>
-                        <LoadingButton type="submit" loading={loading} className={classes.btn} variant="contained">signup</LoadingButton>
+                        <LoadingButton onClick={signUp} type="submit" loading={loading} className={classes.btn} variant="contained">signup</LoadingButton>
                     </form>
                     <p>Already have an account?<Link className={classes.link} href="/login">Log in</Link></p>
                     <Divider variant='middle' />

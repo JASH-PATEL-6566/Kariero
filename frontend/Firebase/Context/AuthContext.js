@@ -9,7 +9,7 @@ import {
 } from "firebase/auth";
 import { useContext, useEffect, useState, createContext } from 'react';
 
-const AuthContext = createContext({});
+const AuthContext = createContext();
 export function useAuth() {
     return useContext(AuthContext);
 }

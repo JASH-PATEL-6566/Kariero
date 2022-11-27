@@ -5,16 +5,19 @@ import { useAuth } from '../../Firebase/Context/AuthContext';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { useRouter } from 'next/router'
+import LogoutIcon from '@mui/icons-material/Logout';
+import { IconButton } from '@mui/material/';
 
 export default function Navbar() {
     const menuItem = ['Engineering', 'MBA', 'Abroad', 'Others'];
     const { currentUser } = useAuth();
     const router = useRouter();
+    const { logout } = useAuth();
 
     return (
         <>
             <nav className={classes.nav}>
-                <div className={classes.header}>
+                <div className={classes.header} onClick={() => router.push('/')}>
                     <h1>
                         Kariero
                     </h1>
@@ -34,7 +37,9 @@ export default function Navbar() {
                         <Button variant="text" onClick={() => {
                             router.push('/login')
                         }}>Login</Button>
-                        <Button variant="contained" style={{
+                        <Button variant="contained" onClick={() => {
+                            router.push('/signup')
+                        }} style={{
                             backgroundColor: '#0D4C92'
                         }}>SignUp</Button>
                     </Stack>
@@ -42,6 +47,14 @@ export default function Navbar() {
                     <div className={classes.profile}>
                         <p>JASH PATEL</p>
                         <Avatar />
+                        <IconButton style={{
+                            backgroundColor: '#59C1BD',
+                            borderRadius: '9px'
+                        }} className={classes.divBtn} onClick={() => {
+                            logout();
+                            router.replace("/");
+                        }
+                        }><LogoutIcon className={classes.logoutBtn} /></IconButton>
                     </div>
                 }
             </nav>

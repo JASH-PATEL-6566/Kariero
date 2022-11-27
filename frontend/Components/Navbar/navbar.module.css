@@ -17,6 +17,7 @@
     text-transform: uppercase;
     letter-spacing: 3px;
     width: 7.5em;
+    cursor: pointer;
 }
 
 .menu {
@@ -51,7 +52,26 @@
     font-size: 1.1em;
     justify-content: flex-end;
     font-weight: 600;
-    gap: 0.4em;
+    gap: 0.7em;
     /* border: 1px solid salmon; */
     width: 14em;
+}
+
+.divBtn {
+    /* height: 2em; */
+    height: 1.4em;
+    width: 1.4em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.divBtn:hover {
+    background-color: white !important;
+}
+.logoutBtn {
+    padding: 0.1em;
+    border-style: none;
+    outline: none;
+    /* width: 2em; */
+    /* border-radius: 0.4em; */
+    cursor: pointer;
 }

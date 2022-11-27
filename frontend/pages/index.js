@@ -4,6 +4,11 @@ import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
-    <h1>JASH</h1>
+    <>
+      <Head>
+        <title>Home | Kariero</title>
+      </Head>
+      <h1>JASH</h1>
+    </>
   )
 }
